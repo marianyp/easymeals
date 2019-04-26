@@ -17,6 +17,9 @@
           :description="recipe.strInstructions"
           :picture="recipe.strMealThumb"
         ></RecipeCard>
+        <p v-if="hasFavorites" class="font-roboto text-2xl text-custom-grey">
+          You have no favorited items.
+        </p>
       </div>
     </div>
   </div>
@@ -57,6 +60,11 @@ export default {
             this.recipes.push(res.data.meals[0]);
           });
       });
+    }
+  },
+  computed: {
+    hasFavorites() {
+      return JSON.parse(localStorage.getItem("favorites")) ? false : true;
     }
   }
 };
