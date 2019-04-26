@@ -69,6 +69,15 @@ export default {
   padding: 0;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
 .widget {
   transition: all 0.4s;
   opacity: 0.6;
