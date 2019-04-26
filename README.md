@@ -1,6 +1,6 @@
 # easyMeals
 Start viewing easy to make meals.
-[Visit Site](easymeals.netlify.com)
+[Visit Site](https://www.easymeals.netlify.com/)
 
 ## About
 Easymeals is a simple web app I made using [VueJS](https://github.com/vuejs/vue) and [TailwindCSS](https://github.com/tailwindcss/tailwindcss). It allows for you to simply view a list of recipes. The recipes are provided by means of [TheMealDB](https://www.themealdb.com/api.php). You can also favorite recipes, and view your favorites later on by clicking on the favorites button in the bottom right.
