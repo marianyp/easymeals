@@ -89,12 +89,12 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.65s;
+  transition: all 0.335s ease-in-out;
 }
 
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
-  transform: translateX(-500px);
+  transform: translateY(-20px);
 }
 </style>
