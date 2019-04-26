@@ -46,7 +46,16 @@ export default {
     this.updateStore(); // Whenever the DOM updates (new meals, meals removed, etc), update the store
   },
   beforeRouteEnter(to, from, next) {
-    next(vm => vm.fetchData());
+    // Get 5 recipes before page loads
+    let preData = [];
+    for (let i = 0; i < 5; i++) {
+      axios
+        .get("https://www.themealdb.com/api/json/v1/1/random.php")
+        .then(res => {
+          preData.push(res.data.meals[0]);
+        });
+    }
+    next(vm => (vm.recipes = preData));
   },
   methods: {
     fetchData() {

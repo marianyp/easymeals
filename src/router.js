@@ -1,9 +1,11 @@
 import Vue from "vue";
 import Router from "vue-router";
+
 import Home from "./views/Home.vue";
 import Meals from "./views/Meals.vue";
 import Recipe from "./views/recipe/_id";
 import Favorites from "./views/Favorites.vue";
+import NotFound from "./views/NotFound.vue";
 
 Vue.use(Router);
 
@@ -30,6 +32,14 @@ export default new Router({
       path: "/favorites",
       name: "favorites",
       component: Favorites
+    },
+    {
+      path: "/404",
+      component: NotFound
+    },
+    {
+      path: "*",
+      redirect: "/404"
     }
   ]
 });

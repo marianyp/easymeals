@@ -17,7 +17,7 @@
           :description="recipe.strInstructions"
           :picture="recipe.strMealThumb"
         ></RecipeCard>
-        <p v-if="hasFavorites" class="font-roboto text-2xl text-custom-grey">
+        <p v-if="!hasFavorites" class="font-roboto text-2xl text-custom-grey">
           You have no favorited items.
         </p>
       </div>
@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     fetchFavorites() {
-      if (JSON.parse(localStorage.getItem("favorites")) != null) {
+      if (this.hasFavorites) {
         this.favorites = JSON.parse(localStorage.getItem("favorites")); // Get all of the favorites in form of an object
       }
     },
@@ -64,7 +64,11 @@ export default {
   },
   computed: {
     hasFavorites() {
-      return JSON.parse(localStorage.getItem("favorites")) ? false : true;
+      let fav =
+        localStorage.getItem("favorites") != null
+          ? JSON.parse(localStorage.getItem("favorites"))
+          : {};
+      return fav.length ? true : false;
     }
   }
 };
