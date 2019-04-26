@@ -64,11 +64,10 @@ export default {
   },
   computed: {
     hasFavorites() {
-      let fav =
-        localStorage.getItem("favorites") != null
-          ? JSON.parse(localStorage.getItem("favorites"))
-          : {};
-      return fav.length ? true : false;
+      let fav = localStorage.getItem("favorites")
+        ? JSON.parse(localStorage.getItem("favorites"))
+        : {};
+      return Object.keys(fav).length > 0 ? true : false;
     }
   }
 };
